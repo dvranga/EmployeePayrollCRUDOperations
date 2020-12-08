@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/payroll_form.css">
     <title>Employee Payroll Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <link rel="stylesheet" href="../css/payroll_form.css">
+    <link rel="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header class="header-content header">
         <div class="logo-content">
-            <img src="../assets/images/logo.png" alt="">
+            <img src="../assets/images/logo.png" alt="Logo">
             <div>
-                <span class="emp-text">EMPLOYEE</span><br>
-                <span class="emp-text emp-payroll">PAYROLL</span>
+                <span class="emp-text">Employee</span><br>
+                <span class="emp-text emp-payroll">PayRoll</span>
             </div>
         </div>
     </header>
-
-
     <div id="formId" class="form-content">
-        <form class="form" action="#" onreset="resetForm()" onsubmit="save()">
+        <form id="empForm" class="form" action="#" onreset="resetForm()" onsubmit="saveForm()">
             <div class="form-head">Employee Payroll Form</div>
             <div class="row-content">
                 <label class="label text" for="name">Name</label>
                 <input class="input" type="text" name="name" id="name" placeholder="Enter name here" required>
-                <error-output class="text-error" for="text"></error-output>
+                <error-output class="text-error" for="name"></error-output>
             </div>
             <div class="row-content">
                 <label class="label text" for="profile">Profile Image</label>
@@ -49,38 +47,35 @@
                     </label>
                 </div>
             </div>
-
-
             <div class="row-content">
                 <label class="label text" for="gender">Gender</label>
                 <div>
-                    <input type="radio" name="gender" id="male" value="male">
-                    <label class="text" for="male">Male</label>
-                    <input type="radio" name="gender" id="female" value="female">
+                    <input type="radio" name="gender" id="male" value="male" required>
+                    <label class="text" for="female">Male</label>
+                    <input type="radio" name="gender" id="female" value="female" required>
                     <label class="text" for="female">Female</label>
                 </div>
             </div>
             <div class="row-content">
                 <label class="label text" for="department">Department</label>
                 <div>
-                    <input class="checkbox" type="checkbox" name="department" id="hr" value="HR">
+                    <input class="checkbox" type="checkbox" name="department" id="hr" value="hr">
                     <label class=" text" for="hr">Hr</label>
-                    <input class="checkbox" type="checkbox" name="department" id="sales" value="Sales">
+                    <input class="checkbox" type="checkbox" name="department" id="sales" value="sales">
                     <label class=" text" for="sales">Sales</label>
-                    <input class="checkbox" type="checkbox" name="department" id="finance" value="Finance">
+                    <input class="checkbox" type="checkbox" name="department" id="finance" value="finance">
                     <label class=" text" for="finance">Finance</label>
-                    <input class="checkbox" type="checkbox" name="department" id="engineer" value="Engineer">
+                    <input class="checkbox" type="checkbox" name="department" id="engineer" value="engineer">
                     <label class=" text" for="engineer">Engineer</label>
-                    <input class="checkbox" type="checkbox" name="department" id="others" value="Others">
-                    <label class=" text" for="others">Other</label>
+                    <input class="checkbox" type="checkbox" name="department" id="other" value="other">
+                    <label class=" text" for="other">Other</label>
                 </div>
             </div>
             <div class="row-content">
                 <label class="label text" for="salary">Salary</label>
-                <input class="input" type="range" name="salary" id="salary" max="500000" min="300000" step="100" value=400000>
-                <output class="salary-output text" for="salary">400000</output>
+                <input class="input" type="range" name="salary" id="salary" max="800000" min="600000" step="100" value=700000>
+                <output class="salary-output text" for="salary">700000</output>
             </div>
-
             <div class="row-content">
                 <label class="label text" for="startdate">Start Date</label>
                 <div id="date">
@@ -141,22 +136,24 @@
                 </div>
                 <error-output class="date-error" for="startdate"></error-output>
             </div>
-
-
             <div class="row-content">
                 <label class="label text" for="notes">Notes</label>
-                <textarea class="input" id="notes" name="Notes" placeholder="type your notes here" style="height: 100px;"></textarea>
+                <textarea class="input" id="notes" name="notes" placeholder="type your notes here" style="height: 100px;"></textarea>
             </div>
             <div class="buttonParent">
                 <a href="./home.html" class="resetButton button cancelButton">Cancel</a>
                 <div class="submit-reset">
-                    <button class="submitButton button" type="submit" id="submitButton">Submit</button>
+                    <button class="submitButton button" type="submit" id="submit">Submit</button>
                     <button class="resetButton button" type="reset" id="reset">Reset</button>
                 </div>
             </div>
-            <script type="text/javascript" src="../js/payroll_form.js"></script>
-            <script type="text/javascript" src="../js/EmployeePayroll.js"></script>
-        </form>
     </div>
+    </form>
+    </div>
+    <script src="../js/payroll_form.js"></script>
+    <script src="../js/EmployeePayroll.js"></script>
+    <script src="../js/home.js"></script>
+    <script src="../js/utility.js"></script>
 </body>
+
 </html>
