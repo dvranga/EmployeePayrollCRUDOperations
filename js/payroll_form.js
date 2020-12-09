@@ -40,9 +40,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
     checkForUpdate();
 });
 
-const saveForm = (event) => {
-    event.preventDefault();
-    event.stopPropagation();
+const saveForm = () => {
+
     try {
         setEmployeePayrollObject();
         createAndUpdateStorage();
@@ -83,7 +82,7 @@ const createEmployeePayroll = () => {
     let date=getInputValueById('#day')+" "+getInputValueById('#month')+" "+
                 getInputValueById('#year');
     employeePayroll.startDate=Date.parse(date);
-    employeePayroll.startDate = new Date(parseInt(document.getElementById("year").value), parseInt(document.getElementById("month").value) - 1, parseInt(document.getElementById("day").value));
+    // employeePayroll.startDate = new Date(parseInt(document.getElementById("year").value), parseInt(document.getElementById("month").value) - 1, parseInt(document.getElementById("day").value));
     alert(employeePayroll.toString());
     return employeePayroll;
 }
@@ -111,7 +110,7 @@ const createAndUpdateStorage=()=> {
     let employeePayrollList = JSON.parse(localStorage.getItem("EmployeePayrollList"));
     if(employeePayrollList){
         let empPayrollData=employeePayrollList.
-        find(empData=>empData._id==employeePayrollObj._id)
+                find(empData=>empData._id==employeePayrollObj._id)
         if(!empPayrollData){
             employeePayrollList.push(createEmployeePayroll());
         }else{
